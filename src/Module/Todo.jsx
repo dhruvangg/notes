@@ -7,8 +7,10 @@ export default function Todo() {
 
     const onAddTodo = (e) => {
         e.preventDefault();
-        setTodos((previousTodos) => [...previousTodos, { id: Date.now(), text: newTodo, isCompleted: false }]);
-        setNewTodo("");
+        if (newTodo) {
+            setTodos((previousTodos) => [...previousTodos, { id: Date.now(), text: newTodo, isCompleted: false }]);
+            setNewTodo("");
+        }
     }
 
     const onUpdateTodoState = (e) => {
