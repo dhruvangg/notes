@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Todo/static/css/main.0d1d12b8.css",
-    "main.js": "/Todo/static/js/main.3608b2ba.js",
+    "main.js": "/Todo/static/js/main.ccf76fb7.js",
     "static/js/922.e5a3ec2b.chunk.js": "/Todo/static/js/922.e5a3ec2b.chunk.js",
     "service-worker.js": "/Todo/service-worker.js",
     "index.html": "/Todo/index.html"
   },
   "entrypoints": [
     "static/css/main.0d1d12b8.css",
-    "static/js/main.3608b2ba.js"
+    "static/js/main.ccf76fb7.js"
   ]
 }
