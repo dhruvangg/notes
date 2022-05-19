@@ -8,7 +8,7 @@ export default function Todo() {
     const onAddTodo = (e) => {
         e.preventDefault();
         if (newTodo) {
-            setTodos((previousTodos) => [...previousTodos, { id: Date.now(), text: newTodo, isCompleted: false }]);
+            setTodos((previousTodos) => [...previousTodos, { id: Date.now(), text: newTodo, isCompleted: false }])
             setNewTodo("");
         }
     }
@@ -22,7 +22,9 @@ export default function Todo() {
     }
 
     const onUpdateTodo = (id, text) => {
-        setTodos((previousTodos) => previousTodos.map((todo) => (todo.id === id ? { ...todo, text } : todo)));
+        if (text) {
+            setTodos((previousTodos) => previousTodos.map((todo) => (todo.id === id ? { ...todo, text } : todo)));
+        }
     }
 
     const updateTodoState = (id) => {
@@ -40,14 +42,14 @@ export default function Todo() {
 
     return (
         <section className="max-w-2xl my-4 mx-auto">
-            <TodoHeader title="Todo App" clearAllTodos={clearAllTodos} />
+            <TodoHeader title="New Todo" clearAllTodos={clearAllTodos} />
             <TodoForm onAddTodo={onAddTodo}>
                 <TodoInput
                     todoInputValue={newTodo}
                     onUpdateTodoState={onUpdateTodoState}
                 />
             </TodoForm>
-            <TodoList todos={todos} actions={{ removeTodo, updateTodoState }} removeTodo={removeTodo} updateTodoState={updateTodoState} />
+            <TodoList todos={todos} actions={{ removeTodo, onUpdateTodo, updateTodoState }} removeTodo={removeTodo} updateTodoState={updateTodoState} />
         </section>
     )
 }
