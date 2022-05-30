@@ -90,6 +90,7 @@ export default function NoteProvider({ children }) {
         if (oldVersion) {
             createNote({ title: 'Old Version todos', tasks: oldVersion })
             localStorage.removeItem("todos")
+            localStorage.setItem("oldVersion", oldVersion)
         }
     }, [])
 
