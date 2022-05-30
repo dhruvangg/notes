@@ -88,7 +88,7 @@ export default function NoteProvider({ children }) {
     useEffect(() => {
         const oldVersion = JSON.parse(localStorage.getItem("todos")) || null
         if (oldVersion) {
-            createNote('Old Version todos', oldVersion)
+            createNote({ title: 'Old Version todos', tasks: oldVersion })
             localStorage.removeItem("todos")
         }
     }, [])
