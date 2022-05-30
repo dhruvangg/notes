@@ -1,16 +1,14 @@
 import { useNoteContext } from "Contexts/NoteContext"
-// import { useTodoContext } from "Contexts/TodoContext"
 import { useRef, useEffect } from "react"
 
 export default function Tasks({ data }) {
     const { noteId, tasks } = data
     const { addTask, updateTask, removeTask } = useNoteContext()
-
     const taskRef = useRef()
-
-    const addNewTask = (e, todoId, value) => {
-        if (e.keyCode === 13) {
-            addTask(todoId, value)
+    const addNewTask = (e) => {
+        const { value } = e.target
+        if (e.keyCode === 13 && value) {
+            addTask(noteId, value)
             e.target.value = ""
         }
     }
@@ -43,7 +41,7 @@ export default function Tasks({ data }) {
             ))}
             <div className="flex flex-row items-center justify-between px-4 py-2 border-gray-200 border-t">
                 <input type="text" name="newTask" className="w-full ml-2 focus:outline-none" aria-label="New Task" aria-required="true"
-                    onKeyUp={e => addNewTask(e, noteId, e.target.value)}
+                    onKeyUp={addNewTask}
                     placeholder="Add Task" />
             </div>
         </div >
