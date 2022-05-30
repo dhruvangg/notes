@@ -42,7 +42,7 @@ export default function Todo() {
 
     return (
         <section className="max-w-2xl my-4 mx-auto">
-            <TodoHeader title="New Todo" clearAllTodos={clearAllTodos} />
+            <TodoHeader title="Champ" clearAllTodos={clearAllTodos} />
             <TodoForm onAddTodo={onAddTodo}>
                 <TodoInput
                     todoInputValue={newTodo}

@@ -1,11 +1,12 @@
-import Timer from "./Module/Timer";
-import Todo from "./Module/Todo";
+import NoteProvider from 'Contexts/NoteContext';
+import Notes from 'Module/Notes';
 
 export default function App() {
   return (
     <main className="container mx-auto min-h-screen p-8">
-      <Timer />
-      <Todo />
+      <NoteProvider>
+        <Notes />
+      </NoteProvider>
     </main>
   )
 }
