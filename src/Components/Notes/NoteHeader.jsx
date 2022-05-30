@@ -2,12 +2,12 @@ import { Menu } from '@headlessui/react'
 import { useNoteContext } from "Contexts/NoteContext"
 
 export function NoteHeader({ data }) {
-    const { addUpdateMemo, updateNote, removeNote } = useNoteContext()
+    const { addUpdateMemo, updateNote, removeNote, cloneNote } = useNoteContext()
     const { noteId, title } = data
     return (
         <div className="flex flex-none items-center justify-between p-4">
             <h1 className="text-2xl font-semibold">
-                <input type="text" value={title} className="focus:outline-none"
+                <input type="text" value={title} className="bg-transparent focus:outline-none"
                     onChange={e => updateNote(noteId, e.target.value)} />
             </h1>
             <Menu className="relative" as="div">
@@ -24,7 +24,7 @@ export function NoteHeader({ data }) {
                         <button className='mr-2 text-sm w-full text-left' onClick={e => addUpdateMemo(noteId)}>Add Memo</button>
                     </Menu.Item>
                     <Menu.Item className="px-4 py-2 flex flex-row items-center" as="div">
-                        <button className='mr-2 text-sm w-full text-left'>Make a Copy</button>
+                        <button className='mr-2 text-sm w-full text-left' onClick={e => cloneNote(noteId)}>Make a Copy</button>
                     </Menu.Item>
                 </Menu.Items>
             </Menu>

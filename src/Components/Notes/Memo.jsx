@@ -13,7 +13,7 @@ export function Memo({ data }) {
     }
 
     return (
-        <textarea className="focus:outline-none px-4 py-2"
+        <textarea className="focus:outline-none px-4 py-2 border-t"
             placeholder="Make a Memo" rows={5}
             onKeyUp={UpdateMemo} defaultValue={memo} />
     )
