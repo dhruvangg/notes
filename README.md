@@ -20,6 +20,7 @@ Simple Todo Progressive web application stores your data locally and can be inst
 
 ## Future plans
 
+- Archive Notes instead of Delete Note (!important)
 - Add UI options like background color and images
 - Printable Notes
 - Shareable Notes by using User auth
